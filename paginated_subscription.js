@@ -65,7 +65,7 @@ Meteor.subscribeWithPagination = function (/*name, arguments, perPage */) {
     
     // whenever the sub becomes ready, we are done. This may happen right away
     // if we are re-subscribing to an already ready subscription.
-    Meteor.autorun(function() {
+    Tracker.autorun(function() {
       if (subHandle.ready())
         handle.done();
     });
